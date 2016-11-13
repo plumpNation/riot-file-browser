@@ -1,0 +1,15 @@
+.file-tree .tree-node-list {
+    padding: 0;
+    margin: 0;
+}
+
+.file-tree .tree-node {
+    border-bottom: 1px solid grey;
+    margin-left: 1rem;
+    padding: 1rem;
+    list-style: none;
+}
+
+.tree-node-title::before {
+    margin-right: 1rem;
+}
