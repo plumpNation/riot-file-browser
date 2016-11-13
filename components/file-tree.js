@@ -1,4 +1,4 @@
-riot.tag2('file-tree', '<section class="file-tree"> <ul class="tree-node-list"> <li class="tree-node" each="{node in treeNodes}"> <button id="{node.id}" data-type="{node.type}" class="tree-node-title fa fa-{node.type}" onclick="{clickNode}"> {node.title} </button> <file-tree if="{node.type === \'folder\'}" tree-nodes="{node.treeNodes}"></file-tree> </li> </ul> </section>', '', '', function(opts) {
+riot.tag2('file-tree', '<section class="file-tree"> <ul class="tree-node-list"> <li class="tree-node" each="{node in treeNodes}"> <button id="{node.id}" data-type="{node.type}" class="tree-node-title {node.DOMClass}" onclick="{clickNode}"> {node.title} </button> <file-tree if="{node.type === \'folder\'}" tree-nodes="{node.treeNodes}"></file-tree> </li> </ul> </section>', '', '', function(opts) {
         'use strict';
 
         this.treeNodes = this.opts.treeNodes;

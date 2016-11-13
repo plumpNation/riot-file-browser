@@ -5,7 +5,7 @@
                 <button
                     id="{node.id}"
                     data-type="{node.type}"
-                    class="tree-node-title fa fa-{node.type}"
+                    class="tree-node-title {node.DOMClass}"
                     onclick="{clickNode}">
                     {node.title}
                 </button>
