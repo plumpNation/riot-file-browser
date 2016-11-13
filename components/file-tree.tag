@@ -1,23 +1,27 @@
 <file-tree>
-    <section class="file-tree">
-        <ul class="tree-node-list">
-            <li class="tree-node" each="{node in treeNodes}">
-                <button
-                    id="{node.id}"
-                    data-type="{node.type}"
-                    class="tree-node-title {node.DOMClass}"
-                    onclick="{clickNode}">
-                    {node.title}
-                </button>
-                <file-tree if={node.type === 'folder'} tree-nodes="{node.treeNodes}"></file-tree>
-            </li>
-        </ul>
-    </section>
+    <ul class="file-tree">
+        <li class="tree-node" each="{node in treeNodes}">
+            <button
+                id="{node.id}"
+                data-type="{node.type}"
+                class="tree-node-title {node.domClass}"
+                onclick="{clickNode}">
+                {node.title}
+            </button>
+            <file-tree if={node.type === 'folder'} tree-nodes="{node.treeNodes}"></file-tree>
+        </li>
+    </ul>
 
     <script type="text/javascript">
         'use strict';
 
         this.treeNodes = this.opts.treeNodes;
+
+        this.on('update', function () {
+            if (this.treeNodes && this.treeNodes[0] && this.treeNodes[0].shoop) {
+                console.log(this.treeNodes[0].treeNodes)
+            }
+        })
 
         this.clickNode = (e) => {
             let eventData = {

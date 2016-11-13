@@ -1,4 +1,4 @@
-.file-tree .tree-node-list {
+.file-tree {
     padding: 0;
     margin: 0;
 }
@@ -8,7 +8,7 @@
     list-style: none;
 }
 
-.file-tree .tree-node .tree-node-title {
+.file-tree .tree-node-title {
     background: none;
     border: none;
     border-bottom: 1px solid grey;
@@ -19,6 +19,6 @@
     width: 100%;
 }
 
-.tree-node-title::before {
+.file-tree .tree-node-title::before {
     margin-right: 1rem;
 }
