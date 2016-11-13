@@ -4,18 +4,20 @@ const appStore = {
     fileTree: {
         treeNodes: [
             {
+                id: 'folder-1',
                 title: 'Folder 1',
                 type: 'folder',
                 treeNodes: [
-                    {title: 'Folder 1a', type: 'folder'},
-                    {title: 'File 1a', type: 'file'}
+                    {id: 'folder-1-a', title: 'Folder 1a', type: 'folder'},
+                    {id: 'file-1-a', title: 'File 1a', type: 'file'}
                 ]
             },
             {
+                id: 'folder-2',
                 title: 'Folder 2',
                 type: 'folder',
                 treeNodes: [
-                    {title: 'File 2a', type: 'file'}
+                    {id: 'file-2-a', title: 'File 2a', type: 'file'}
                 ]
             }
         ]
@@ -23,5 +25,7 @@ const appStore = {
 };
 
 function init() {
-    riot.mount('file-tree', appStore.fileTree);
+    const tree = riot.mount('file-tree', appStore.fileTree)[0];
+
+    tree.on('nodeSelect', (data) => console.log(data));
 }

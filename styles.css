@@ -4,10 +4,19 @@
 }
 
 .file-tree .tree-node {
-    border-bottom: 1px solid grey;
     margin-left: 1rem;
-    padding: 1rem;
     list-style: none;
+}
+
+.file-tree .tree-node .tree-node-title {
+    background: none;
+    border: none;
+    border-bottom: 1px solid grey;
+    cursor: pointer;
+    display: block;
+    text-align: left;
+    padding: 1rem;
+    width: 100%;
 }
 
 .tree-node-title::before {
